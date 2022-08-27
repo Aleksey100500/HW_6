@@ -17,11 +17,15 @@ class Program
 
          for(int i = 10; i < array.Length; i++)
             {
+                if(array[i] > 10 && array[i] < 99)
+                {
+                    Sum++;
+                }
+                
                 if( i == 99)
                 {
                     break;   
                 }   
-                Sum++;
             }
 
         Console.Write(Sum);
