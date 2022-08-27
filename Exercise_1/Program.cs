@@ -1,39 +1,29 @@
-﻿class Program
+﻿//Задача 35: Задайте одномерный массив из 123 случайных чисел. Найдите количество элементов массива, значения которых лежат в отрезке [10,99].
+
+//Пример для массива из 5, а не 123 элементов. В своём решении сделайте для 123
+
+class Program
 {
-    static int MaxNumberArray (int[] array)
-    {
-        int max = 0;
-        for(int i = 0; i < array.Length; i++)
-        {
-            if ( array[i] > max)
-            {
-                max = array[i];
-            }
-        }
-        return max;
-    }
-
-    static int MinNumberArray (int[] array)
-    {
-        int min = array[0];
-        for(int i = 0; i < array.Length; i++)
-        {
-            if ( array[i] < min)
-            {
-                min = array[i];
-            }
-        }
-        return min;
-    }
-
     static void Main (string[] args)
     {
-        int[] array = {1, 2, 5, 6, 18, 10, 22, 31};
-        int max = MaxNumberArray(array);
-        int min = MinNumberArray(array);
-        Console.WriteLine(max);
-        Console.WriteLine(min);
-        Console.WriteLine(max - min);
+        int[] array = new int [123];
+        int Sum = 0;
 
+
+        for(int i = 0; i < array.Length; i++)
+        {
+            array[i]  = new Random().Next(1, 123);
+        }
+
+         for(int i = 10; i < array.Length; i++)
+            {
+                if( i == 99)
+                {
+                    break;   
+                }   
+                Sum++;
+            }
+
+        Console.Write(Sum);
     }
 }
